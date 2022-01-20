@@ -15,8 +15,5 @@ pipeline{
       }
     }
   }
-  parameters{
-    string(name: 'VERSION',defaultValue: '',description: 'version')
-  }
 }
     
