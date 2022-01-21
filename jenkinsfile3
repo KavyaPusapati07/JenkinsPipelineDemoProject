@@ -26,7 +26,6 @@ pipeline{
         echo "compiling"
         script{
           compile.compile()
-          compile.deploy()
          }
        }
      }
