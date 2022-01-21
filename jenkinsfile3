@@ -10,7 +10,7 @@ pipeline{
     stage('test'){
       steps{
         echo "testing "
-        bat "${params.TEST}"
+        bat "mvn test"
         script{
           gv=load("lib.groovy")
           gv.add(12,13)
@@ -18,8 +18,4 @@ pipeline{
       }
     }
   }
-  parameters{
-    string(name: 'BUILD',defaultValue: 'mvn clean',description:'build command')
-    string(name: 'TEST',defaultValue: 'mvn test',description:'test command')
-    }
 }
