@@ -14,6 +14,7 @@ pipeline{
         script{
           gv=load("lib.groovy")
           gv.add(12,13)
+        }
       }
     }
   }
@@ -22,4 +23,3 @@ pipeline{
     string(name: 'TEST',defaultValue: 'mvn test',description:'test command')
     }
 }
-    
