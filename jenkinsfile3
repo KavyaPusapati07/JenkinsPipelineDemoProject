@@ -12,7 +12,7 @@ pipeline{
         echo "testing "
         bat "${params.TEST}"
         script{
-          gv=load("lib.groovy")
+          gv=load("vars.lib.groovy")
           gv.add(12,13)
         }
       }
