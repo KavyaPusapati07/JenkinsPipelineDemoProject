@@ -9,9 +9,11 @@ pipeline{
     } 
     stage('test'){
       steps{
-        echo "testing ${params.BUILD}"
+        echo "testing "
         bat "${params.TEST}"
-        archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+        script{
+          gv=load("lib.groovy")
+          gv.add(12,13)
       }
     }
   }
