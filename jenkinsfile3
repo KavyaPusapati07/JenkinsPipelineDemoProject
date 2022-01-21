@@ -21,6 +21,23 @@ pipeline{
         }
       }
     }
+    stage('compile'){
+      steps{
+        echo "compiling"
+        script{
+          compile.compile()
+          compile.deploy()
+         }
+       }
+     }
+     stage('deploy'){
+      steps{
+        echo "deploying----------"
+        script{
+          compile.deploy()
+         }
+       }
+     }
   }
   parameters{
     string(name: 'BUILD',defaultValue: 'mvn clean',description:'build command')
